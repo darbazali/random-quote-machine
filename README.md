@@ -1,8 +1,8 @@
-## React Sterter Kit
-A simple React.js Starter Kit for fast development.
+## Random Quote Machine
+Randome quote generator using React and Redux
 
 ### Scripts
-**dev** for development env
-**format** runs prettier plugin
+**dev** for development <br/>
+**format** runs prettier plugin <br/>
 **lint** eslint
 
