@@ -35,8 +35,8 @@ body {
     margin: 0 auto;
     width: 95%;
     max-width: 500px;
-    min-height: 300px;
-    height: 350px;
+    min-height: 350px;
+    
     color: #1D976C;
     padding: 40px;
     background: transparent;
@@ -94,8 +94,13 @@ body {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     font-family: 'Balsamiq Sans';
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
 
-
+.btn:hover {
+    transform: scale(1.020);
 }
 
 #box-buttons {
