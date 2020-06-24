@@ -12,3 +12,13 @@ body {
     background-color: rgb(241, 241, 241);
     padding: 40px;
 }
+
+#quote-box {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 500px;
+    height: 300px;
+    background-color: dodgerblue;
+    color: #ffffff;
+    padding: 30px;
+}
