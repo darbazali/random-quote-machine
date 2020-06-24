@@ -98,12 +98,13 @@ class Presentational extends Component {
   }
 
   render() {
+      const author = this.props.quotes.author;
     return (
       <div id="quote-box">
         <span id="quote-mark">"</span>
         <h3 id="text">{this.props.quotes.text}</h3>
 
-        <p id="author">{this.props.quotes.author}</p>
+        <p id="author">- { author}</p>
 
         <div id="box-buttons">
           <a href="#" id="tweet-quote">
