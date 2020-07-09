@@ -1,11 +1,16 @@
 
 import React, { useState, useEffect} from 'react'
+import defaultQuots from './defaultQuots'
 
 const QuoteBox = () => {
 
-  const [quotes, setQuotes] = useState([]);
-  const [quote, setQuote] = useState({text: "Time stays long enough for anyone who will use it.", author: "Leonardo da Vinci"})
+  const getRandomItem = (array) =>
+  array[Math.floor(Math.random() * array.length)];
 
+  const [quotes, setQuotes] = useState(defaultQuots);
+  const [quote, setQuote] = useState( getRandomItem(quotes))
+
+  
   useEffect( () => {
       const url = "https://type.fit/api/quotes";
       fetch( url )
@@ -14,10 +19,12 @@ const QuoteBox = () => {
 
   }, [])
 
+
     function handleNewQuote() {
         setQuote( getRandomItem(quotes))
     }
       
+
     
    return (
      <div>
@@ -36,7 +43,6 @@ export default QuoteBox;
 
   
 
-const getRandomItem = (array) =>
-  array[Math.floor(Math.random() * array.length)];
+
 
 
