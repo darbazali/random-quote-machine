@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 import QuoteBox from "./QuoteBox";
 import defaultQuots from "./defaultQuots";
+import background from './styles'
 
 const App = () => {
   const getRandomItem = (array) =>
@@ -10,7 +11,7 @@ const App = () => {
 
   const [quotes, setQuotes] = useState(defaultQuots);
   const [quote, setQuote] = useState(getRandomItem(quotes));
-
+  const [randomBgColor, setRandomBgColor] = useState(getRandomItem(background))
   useEffect(() => {
     const url = "https://type.fit/api/quotes";
     fetch(url)
@@ -20,13 +21,17 @@ const App = () => {
 
   function handleNewQuote() {
     setQuote(getRandomItem(quotes));
+    setRandomBgColor(getRandomItem(background))
   }
 
   const { text, author } = quote;
-
   return (
-    <div>
-      <QuoteBox text={text} author={author} handleNewQuote={handleNewQuote} />
+    <div id="app" style={randomBgColor}>
+      <QuoteBox 
+        bg_color={randomBgColor}
+        text={text} 
+        author={author} 
+        handleNewQuote={handleNewQuote} />
     </div>
   );
 };

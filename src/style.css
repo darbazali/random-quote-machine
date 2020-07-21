@@ -15,10 +15,11 @@ body {
 #root {
     width: 100vw;
     height: 100vh;
-    background-color: #ff9a9e;
-    background: linear-gradient(#ff9a9e 0%, #fad0c4 100%);
+}
 
-
+#app {
+    width: 100vw;
+    height: 100vh;
 }
 
 
@@ -27,7 +28,7 @@ body {
     max-width: 500px;
     min-height: 350px;
     
-    color: #393939;
+    color: #000000;
     padding: 40px;
     background: transparent;
 

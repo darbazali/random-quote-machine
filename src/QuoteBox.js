@@ -1,6 +1,8 @@
 import React from "react";
 
 const QuoteBox = (props) => {
+  const { background_color } = props.bg_color;
+
   return (
     <div id="quote-box">
       <span id="quote-mark">&quot;</span>
@@ -9,11 +11,15 @@ const QuoteBox = (props) => {
       <p id="author">- {props.author? props.author: "Unknown"}</p>
 
       <div id="box-buttons">
-        <a href="#" id="tweet-quote">
+        <a style={{color: background_color}} href="#" id="tweet-quote">
           Tweet Quote
         </a>
 
-        <button className="btn" id="new-quote" onClick={props.handleNewQuote}>
+        <button 
+          style={{backgroundColor: background_color}}
+          className="btn" 
+          id="new-quote" 
+          onClick={props.handleNewQuote}>
           New Quote
         </button>
       </div>
