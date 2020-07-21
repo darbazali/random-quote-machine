@@ -6,7 +6,7 @@ const QuoteBox = (props) => {
       <span id="quote-mark">&quot;</span>
       <h3 id="text">{props.text}</h3>
 
-      <p id="author">- {props.author}</p>
+      <p id="author">- {props.author? props.author: "Unknown"}</p>
 
       <div id="box-buttons">
         <a href="#" id="tweet-quote">
