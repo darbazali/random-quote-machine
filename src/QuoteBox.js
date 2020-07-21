@@ -1,37 +1,19 @@
-import React, { useState, useEffect } from "react";
-import defaultQuots from "./defaultQuots";
+import React from "react";
 
-const QuoteBox = () => {
-  const getRandomItem = (array) =>
-    array[Math.floor(Math.random() * array.length)];
-
-  const [quotes, setQuotes] = useState(defaultQuots);
-  const [quote, setQuote] = useState(getRandomItem(quotes));
-
-  useEffect(() => {
-    const url = "https://type.fit/api/quotes";
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setQuotes(data));
-  }, []);
-
-  function handleNewQuote() {
-    setQuote(getRandomItem(quotes));
-  }
-
+const QuoteBox = (props) => {
   return (
     <div id="quote-box">
-      <span id="quote-mark">"</span>
-      <h3 id="text">{quote.text}</h3>
+      <span id="quote-mark">&quot;</span>
+      <h3 id="text">{props.text}</h3>
 
-      <p id="author">- {quote.author}</p>
+      <p id="author">- {props.author}</p>
 
       <div id="box-buttons">
         <a href="#" id="tweet-quote">
           Tweet Quote
         </a>
 
-        <button className="btn" id="new-quote" onClick={handleNewQuote}>
+        <button className="btn" id="new-quote" onClick={props.handleNewQuote}>
           New Quote
         </button>
       </div>
